@@ -83,6 +83,7 @@ export default function Home() {
         />
       </div>
 
+
       {/* ── Properties ── */}
       <section className="section">
         <div className="container">
