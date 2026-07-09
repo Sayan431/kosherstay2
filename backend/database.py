@@ -7,8 +7,7 @@ load_dotenv()
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://postgres:root123@localhost:5432/kosher_db"
-)
+    "postgresql://neondb_owner:npg_8AjChB0rpmTX@ep-tiny-brook-ahledph2-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 
 engine = create_engine(
     DATABASE_URL,
