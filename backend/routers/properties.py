@@ -26,6 +26,7 @@ def save_image(file: UploadFile) -> str:
 
 @router.get("/", response_model=List[schemas.PropertyListOut])
 def list_properties(
+    name: Optional[str] = None,
     pincode: Optional[str] = None,
     type: Optional[str] = None,
     min_price: Optional[float] = None,
@@ -33,6 +34,8 @@ def list_properties(
     db: Session = Depends(get_db),
 ):
     q = db.query(models.Property).filter(models.Property.is_active == True)
+    if name:
+        q = q.filter(models.Property.name.ilike(f"%{name}%"))
     if pincode:
         q = q.filter(models.Property.pincode == pincode)
     if type:

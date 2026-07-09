@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-export default function FilterPanel({ filters, onChange, onReset }) {
+export default function FilterPanel({ filters, onChange, onApply, onReset }) {
   const { t } = useTranslation();
 
   return (
@@ -53,7 +53,7 @@ export default function FilterPanel({ filters, onChange, onReset }) {
       </div>
 
       <div style={{ display: 'flex', gap: 8, alignItems: 'flex-end' }}>
-        <button className="btn btn-primary" onClick={() => onChange(filters)}>
+        <button className="btn btn-primary" onClick={onApply}>
           🔍 {t('home.apply')}
         </button>
         <button className="btn btn-outline" onClick={onReset}>

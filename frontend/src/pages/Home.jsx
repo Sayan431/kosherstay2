@@ -17,6 +17,7 @@ export default function Home() {
     setLoading(true);
     try {
       const params = {};
+      if (f.name) params.name = f.name;
       if (f.pincode) params.pincode = f.pincode;
       if (f.type) params.type = f.type;
       if (f.min_price) params.min_price = f.min_price;
@@ -34,7 +35,7 @@ export default function Home() {
 
   const handleHeroSearch = (e) => {
     e.preventDefault();
-    const f = { ...INIT_FILTERS, pincode: heroSearch };
+    const f = { ...INIT_FILTERS, name: heroSearch };
     setFilters(f);
     fetchProperties(f);
   };
@@ -56,18 +57,8 @@ export default function Home() {
             <input
               value={heroSearch}
               onChange={e => setHeroSearch(e.target.value)}
-              placeholder={t('home.search_placeholder')}
+              placeholder={t('home.search_name_placeholder', 'Search by property name...')}
             />
-            <select
-              value={filters.type}
-              onChange={e => setFilters(f => ({ ...f, type: e.target.value }))}
-            >
-              <option value="">{t('home.all_types')}</option>
-              <option value="Home">🏠 Home</option>
-              <option value="Apartment">🏢 Apartment</option>
-              <option value="Villa">🏖️ Villa</option>
-              <option value="Cabin">🌲 Cabin</option>
-            </select>
             <button type="submit" className="btn btn-primary">
               🔍 {t('home.search_btn')}
             </button>
@@ -87,6 +78,7 @@ export default function Home() {
         <FilterPanel
           filters={filters}
           onChange={handleFilterChange}
+          onApply={handleApplyFilters}
           onReset={handleReset}
         />
       </div>
