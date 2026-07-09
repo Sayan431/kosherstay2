@@ -3,6 +3,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { propertiesAPI, adminAPI } from '../../api/index.js';
 
+import AdminSidebar from '../../components/AdminSidebar.jsx';
+
 const STEPS = ['Details', 'Services', 'Days Plan', 'Images', 'Rules'];
 
 const TYPE_OPTIONS = ['Home', 'Apartment', 'Villa', 'Cabin'];
@@ -121,14 +123,7 @@ export default function AddProperty() {
 
   return (
     <div className="dashboard-layout">
-      <aside className="sidebar">
-        <div className="sidebar-logo">✡ KosherStay<br /><small style={{ fontSize: 11 }}>Property Owner Panel</small></div>
-        <nav className="sidebar-nav">
-          <Link to="/admin" className="sidebar-link">🏠 {t('admin.dashboard')}</Link>
-          <Link to="/admin/add-property" className="sidebar-link active">➕ {t('admin.add_property')}</Link>
-          <Link to="/admin/bookings" className="sidebar-link">📋 {t('admin.bookings')}</Link>
-        </nav>
-      </aside>
+      <AdminSidebar />
 
       <main className="dashboard-content">
         <div className="page-header">

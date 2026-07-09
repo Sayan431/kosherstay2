@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { bookingsAPI, getImageUrl } from '../../api/index.js';
 import { format } from 'date-fns';
 
+import AdminSidebar from '../../components/AdminSidebar.jsx';
+
 const PLACEHOLDER = 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=200&q=80';
 
 const STATUS_COLORS = {
@@ -43,14 +45,7 @@ export default function AdminBookings() {
 
   return (
     <div className="dashboard-layout">
-      <aside className="sidebar">
-        <div className="sidebar-logo">✡ KosherStay<br /><small style={{ fontSize: 11 }}>Property Owner Panel</small></div>
-        <nav className="sidebar-nav">
-          <Link to="/admin" className="sidebar-link">🏠 {t('admin.dashboard')}</Link>
-          <Link to="/admin/add-property" className="sidebar-link">➕ {t('admin.add_property')}</Link>
-          <Link to="/admin/bookings" className="sidebar-link active">📋 {t('admin.bookings')}</Link>
-        </nav>
-      </aside>
+      <AdminSidebar />
 
       <main className="dashboard-content">
         <div className="page-header">

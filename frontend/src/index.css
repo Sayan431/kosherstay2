@@ -493,6 +493,10 @@ h3 { font-size: 1.3rem; }
   font-weight: 500;
   transition: all var(--transition);
   text-decoration: none;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
 }
 .sidebar-link:hover { background: rgba(255,255,255,0.08); color: var(--white); }
 .sidebar-link.active {

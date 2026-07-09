@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { adminAPI, getImageUrl } from '../../api/index.js';
 import { useAuth } from '../../context/AuthContext.jsx';
 
+import AdminSidebar from '../../components/AdminSidebar.jsx';
+
 const PLACEHOLDER = 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&q=80';
 
 export default function AdminDashboard() {
@@ -24,17 +26,7 @@ export default function AdminDashboard() {
   return (
     <div className="dashboard-layout">
       {/* Sidebar */}
-      <aside className="sidebar">
-        <div className="sidebar-logo">✡ KosherStay<br /><small style={{ fontSize: 11 }}>Property Owner Panel</small></div>
-        <nav className="sidebar-nav">
-          <span className="sidebar-section-label">Main</span>
-          <Link to="/admin" className="sidebar-link active">🏠 {t('admin.dashboard')}</Link>
-          <Link to="/admin/add-property" className="sidebar-link">➕ {t('admin.add_property')}</Link>
-          <Link to="/admin/bookings" className="sidebar-link">📋 {t('admin.bookings')}</Link>
-          <span className="sidebar-section-label">Account</span>
-          <Link to="/" className="sidebar-link">🏡 View Site</Link>
-        </nav>
-      </aside>
+      <AdminSidebar />
 
       {/* Content */}
       <main className="dashboard-content">

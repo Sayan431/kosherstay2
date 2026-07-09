@@ -6,6 +6,8 @@ import 'react-calendar/dist/Calendar.css';
 import { propertiesAPI } from '../../api/index.js';
 import { format, isFriday, isSaturday, addDays } from 'date-fns';
 
+import AdminSidebar from '../../components/AdminSidebar.jsx';
+
 /**
  * Shabbat detection:
  * - Friday (after sunset ~18:00) through Saturday night (~19:00)
@@ -101,14 +103,7 @@ export default function BookingCalendar() {
 
   return (
     <div className="dashboard-layout">
-      <aside className="sidebar">
-        <div className="sidebar-logo">✡ KosherStay<br /><small style={{ fontSize: 11 }}>Property Owner Panel</small></div>
-        <nav className="sidebar-nav">
-          <Link to="/admin" className="sidebar-link">🏠 {t('admin.dashboard')}</Link>
-          <Link to="/admin/add-property" className="sidebar-link">➕ {t('admin.add_property')}</Link>
-          <Link to="/admin/bookings" className="sidebar-link">📋 {t('admin.bookings')}</Link>
-        </nav>
-      </aside>
+      <AdminSidebar />
 
       <main className="dashboard-content">
         <div className="page-header">
