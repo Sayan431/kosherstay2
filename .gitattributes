@@ -1,0 +1,13 @@
+# Normalize line endings to LF in the repository on all platforms
+* text=auto eol=lf
+
+# Explicitly declare binary files so git never tries to convert them
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.svg text eol=lf
+*.whl binary
+*.pyc binary

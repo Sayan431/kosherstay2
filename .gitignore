@@ -1,0 +1,100 @@
+# ─── Python / Backend ─────────────────────────────────────────────────────────
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+.env.local
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment variables — NEVER commit secrets
+backend/.env
+.env
+
+# SQLite database (dev only, not needed in repo)
+*.db
+*.sqlite3
+
+# Uploaded property images — large binary files
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+
+
+# ─── Node / Frontend ──────────────────────────────────────────────────────────
+
+node_modules/
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+frontend/dist-ssr/
+
+# Vite cache
+.vite/
+frontend/.vite/
+
+# npm / yarn debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.local
+
+
+# ─── Editors & OS ─────────────────────────────────────────────────────────────
+
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains / PyCharm
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+
+# ─── Misc ─────────────────────────────────────────────────────────────────────
+
+*.log
+*.bak
+*.swp
+*.swo
+*.tmp

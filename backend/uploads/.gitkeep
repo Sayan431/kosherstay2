@@ -1,0 +1,2 @@
+# This file keeps the uploads/ directory in git while ignoring its contents.
+# Property images uploaded at runtime are excluded via .gitignore.
