@@ -112,7 +112,7 @@ export default function Home() {
       <footer style={{ background: 'var(--navy)', color: 'rgba(255,255,255,0.5)', textAlign: 'center', padding: '32px 24px', fontSize: 13 }}>
         <div style={{ fontSize: '1.5rem', marginBottom: 8, color: 'var(--gold)' }}>✡ KosherStay</div>
         <p>Premium Kosher vacation rentals • Shabbat-ready homes worldwide</p>
-        <p style={{ marginTop: 8 }}>© 2024 KosherStay. All rights reserved.</p>
+        <p style={{ marginTop: 8 }}>© 2026 KosherStay. All rights reserved.</p>
       </footer>
     </div>
   );

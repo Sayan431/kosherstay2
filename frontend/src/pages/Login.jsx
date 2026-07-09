@@ -81,7 +81,9 @@ export default function Login() {
         </p>
 
         <div style={{ marginTop: 20, padding: '12px', background: 'var(--gray-50)', borderRadius: 'var(--radius)', fontSize: 12, color: 'var(--gray-400)' }}>
-          <strong>Demo:</strong> Super Admin: admin@kosher.com / admin123
+          <strong>Demo:</strong> Super Admin: admin@kosher.com / admin123<br />
+          <strong>Demo:</strong> Hotel Admin: yugen@gmail.com / 123456<br />
+          <strong>Demo:</strong> Customer: customer@gmail.com / 123456
         </div>
       </div>
     </div>
