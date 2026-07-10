@@ -26,7 +26,10 @@ api.interceptors.response.use(
   }
 );
 
-export const getImageUrl = (url) => url ? `${API_BASE}${url}` : null;
+export const getImageUrl = (url) => {
+  if (!url) return null;
+  return url.startsWith('http') ? url : `${API_BASE}${url}`;
+};
 
 // ─── Auth ─────────────────────────────────────────────────────────────────
 export const authAPI = {

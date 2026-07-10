@@ -164,9 +164,17 @@ def delete_image(
     ).first()
     if not img:
         raise HTTPException(status_code=404, detail="Image not found")
-    # Remove file
+    # Delete from Cloudinary (extract public_id from the secure_url)
     try:
-        os.remove(img.image_url.lstrip("/"))
+        # Cloudinary URL format: .../upload/v12345/folder/filename.ext
+        url_path = img.image_url.split("/upload/")[-1]
+        # Strip version segment (v12345/) if present
+        parts = url_path.split("/")
+        if parts[0].startswith("v") and parts[0][1:].isdigit():
+            parts = parts[1:]
+        public_id_with_ext = "/".join(parts)
+        public_id = public_id_with_ext.rsplit(".", 1)[0]
+        cloudinary.uploader.destroy(public_id)
     except Exception:
         pass
     db.delete(img)
