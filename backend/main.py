@@ -22,10 +22,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ─── Static files (uploaded images) ─────────────────────────────────────────
-os.makedirs("uploads", exist_ok=True)
-app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
-
 # ─── Routers ─────────────────────────────────────────────────────────────────
 app.include_router(auth.router)
 app.include_router(properties.router)

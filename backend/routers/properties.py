@@ -6,6 +6,8 @@ import json, os, shutil, uuid
 import models, schemas
 from database import get_db
 from auth import require_approved_admin, get_current_user
+import cloudinary.uploader
+from cloudinary_config import cloudinary  
 
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -14,12 +16,12 @@ router = APIRouter(prefix="/api/properties", tags=["Properties"])
 
 
 def save_image(file: UploadFile) -> str:
-    ext = os.path.splitext(file.filename)[1]
-    filename = f"{uuid.uuid4()}{ext}"
-    path = os.path.join(UPLOAD_DIR, filename)
-    with open(path, "wb") as f:
-        shutil.copyfileobj(file.file, f)
-    return f"/uploads/{filename}"
+    result = cloudinary.uploader.upload(
+        file.file,
+        folder="kosherstay",
+        resource_type="image",
+    )
+    return result["secure_url"]
 
 
 # ─── Public endpoints ────────────────────────────────────────────────────────
